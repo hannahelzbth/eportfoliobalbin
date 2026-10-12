@@ -21,8 +21,7 @@ function Projects() {
     },
     {
       title: "More Projects Soon",
-      description:
-        "More projects soon.",
+      description: "More projects soon.",
       image: "/images/soon.jpg",
       technologies: "N/A",
     },
@@ -31,18 +30,18 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="bg-white px-6 py-20"
+      className="bg-[#F5EFE6] px-6 py-20"
     >
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-4 text-center text-3xl font-bold text-black font-mono">
+        <h2 className="mb-4 text-center font-mono text-3xl font-bold text-[#3E2B23] md:text-4xl">
           Projects / Work Samples
         </h2>
 
-        <p className="mx-auto mb-10 max-w-2xl text-center text-black font-mono text-lg">
+        <p className="mx-auto mb-10 max-w-2xl text-center font-mono text-lg leading-relaxed text-[#795548]">
           Here are my recent activities.
         </p>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 font-mono">
+        <div className="grid gap-6 font-mono md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard
               key={project.title}

@@ -41,35 +41,35 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="bg-white px-6 py-20"
+      className="bg-[#F5EFE6] px-6 py-20"
     >
       <div className="mx-auto max-w-4xl">
-        <h2 className="mb-4 text-center text-3xl font-bold text-black font-mono">
+        <h2 className="mb-4 text-center font-mono text-3xl font-bold text-[#3E2B23]">
           Contact Me
         </h2>
 
-        <p className="mb-10 text-center text-black font-mono">
+        <p className="mb-10 text-center font-mono text-[#795548]">
           Feel free to reach out to me using the information below.
         </p>
 
-        <div className="mb-8 rounded-xl border border-black bg-slate-50 p-6 text-center font-mono">
-          <p className="text-black">
+        <div className="mb-8 rounded-xl border border-[#D8C4AD] bg-[#E8D8C4] p-6 text-center font-mono">
+          <p className="text-[#5C4033]">
             Email: Julius.pansoy17@gmail.com
           </p>
 
-          <p className="mt-2 text-black">
+          <p className="mt-2 text-[#5C4033]">
             GitHub: github.com/JulyoGit
           </p>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-xl border border-black font-mono bg-white p-6 shadow-sm"
+          className="rounded-xl border border-[#D8C4AD] bg-[#FFFDF9] p-6 font-mono shadow-sm"
         >
           <div className="mb-5">
             <label
               htmlFor="name"
-              className="mb-2 block font-medium text-black"
+              className="mb-2 block font-medium text-[#3E2B23]"
             >
               Name
             </label>
@@ -81,14 +81,15 @@ function Contact() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Enter your name"
-              className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-gray-200 focus:ring-2 focus:ring-gray-500/20"
+              required
+              className="w-full rounded-lg border border-[#C5A582] bg-[#F5EFE6] px-4 py-3 text-[#3E2B23] outline-none transition placeholder:text-[#9A806B] focus:border-[#795548] focus:ring-2 focus:ring-[#795548]/20"
             />
           </div>
 
           <div className="mb-5">
             <label
               htmlFor="email"
-              className="mb-2 block font-medium text-black"
+              className="mb-2 block font-medium text-[#3E2B23]"
             >
               Email
             </label>
@@ -100,14 +101,15 @@ function Contact() {
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter your email"
-              className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-gray-200 focus:ring-2 focus:ring-gray-500/20"
+              required
+              className="w-full rounded-lg border border-[#C5A582] bg-[#F5EFE6] px-4 py-3 text-[#3E2B23] outline-none transition placeholder:text-[#9A806B] focus:border-[#795548] focus:ring-2 focus:ring-[#795548]/20"
             />
           </div>
 
           <div className="mb-5">
             <label
               htmlFor="message"
-              className="mb-2 block font-medium text-black"
+              className="mb-2 block font-medium text-[#3E2B23]"
             >
               Message
             </label>
@@ -119,19 +121,20 @@ function Contact() {
               onChange={handleChange}
               placeholder="Write your message"
               rows="5"
-              className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-gray-200 focus:ring-2 focus:ring-gray-500/20"
+              required
+              className="w-full rounded-lg border border-[#C5A582] bg-[#F5EFE6] px-4 py-3 text-[#3E2B23] outline-none transition placeholder:text-[#9A806B] focus:border-[#795548] focus:ring-2 focus:ring-[#795548]/20"
             ></textarea>
           </div>
 
           <button
             type="submit"
-            className="w-full rounded-lg bg-black px-6 py-3 font-medium text-white transition hover:bg-white hover:text-black border border-black"
+            className="w-full rounded-lg border border-[#5C4033] bg-[#5C4033] px-6 py-3 font-medium text-white transition hover:-translate-y-1 hover:bg-[#795548]"
           >
             Send Message
           </button>
 
           {submitted && (
-            <p className="mt-4 text-center font-medium text-green-600">
+            <p className="mt-4 text-center font-medium text-[#5C6B45]">
               Thank you! Your message has been submitted.
             </p>
           )}
