@@ -1,101 +1,120 @@
 
-import { useState } from "react";
-
 function Home() {
-  const [currentPhoto, setCurrentPhoto] = useState(0);
-
-  const photos = [
-    "/images/instant1.jpg",
-    "/images/instant2.jpg",
-    "/images/instant3.jpg",
-    "/images/instant4.jpg",
-    "/images/instant5.jpg",
-  ];
-
-  function nextPhoto() {
-    setCurrentPhoto((current) => {
-      if (current === photos.length - 1) {
-        return 0;
-      }
-
-      return current + 1;
-    });
-  }
-
   return (
     <section
       id="home"
-      className="min-h-[85vh] bg-[#F5EFE6] px-6 py-20"
+      className="relative overflow-hidden bg-[#FFF8EE] px-6 py-20 text-[#25231F] sm:py-28"
     >
-      <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
-        <div>
-          <p className="mb-3 font-mono text-lg font-bold uppercase text-[#795548]">
-            Welcome to my e-portfolio
+      <div className="pointer-events-none absolute -right-20 top-16 h-64 w-64 rounded-full bg-[#D7F36A] opacity-70 blur-3xl" />
+      <div className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-[#FFC6A8] opacity-60 blur-3xl" />
+
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-12">
+        <div className="md:col-span-8">
+          <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-[#25231F]/20 bg-white/70 px-4 py-2">
+            <span className="h-3 w-3 rounded-full bg-[#7652D4]" />
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.2em]">
+              Welcome to my e-portfolio
+            </p>
+          </div>
+
+          <p className="mb-4 font-mono text-sm font-bold uppercase tracking-[0.3em] text-[#7652D4]">
+            Hello, I'm
           </p>
 
-          <h1 className="mb-5 font-mono text-3xl font-bold text-[#3E2B23] md:text-6xl">
-            Hello, I'm Julius A. Pansoy Jr.
+          <h1 className="max-w-4xl text-6xl font-black leading-[0.88] tracking-[-0.06em] sm:text-7xl md:text-8xl lg:text-9xl">
+            Hannah
+            <br />
+            Elizabeth
+            <br />
+            <span className="text-[#7652D4]">Balbin</span>
+            <span className="text-[#FF916B]">.</span>
           </h1>
 
-          <p className="mb-6 max-w-xl font-mono text-lg leading-relaxed text-[#5C4033]">
-            I’m currently in my third year of college, studying Information Technology,
-            interested in learning new technologies.
-          </p>
+          <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-start">
+            <div className="h-1 w-16 shrink-0 bg-[#FF916B] sm:mt-3" />
 
-          <div className="flex flex-wrap gap-4">
+            <p className="max-w-xl font-mono text-base leading-8 text-[#5D554C] sm:text-lg">
+              An Information Technology student passionate about web
+              development, programming, and exploring new technologies.
+              I'm here to turn ideas into projects while learning something
+              new along the way.
+            </p>
+          </div>
+
+          <div className="mt-9 flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="rounded-lg border border-[#5C4033] bg-[#5C4033] px-6 py-3 font-mono font-medium text-white transition hover:-translate-y-1 hover:bg-[#795548]"
+              className="inline-flex items-center gap-3 rounded-full bg-[#25231F] px-7 py-4 font-mono text-sm font-bold text-white transition duration-200 hover:-translate-y-1 hover:bg-[#7652D4]"
             >
-              View My Projects
+              Explore My Projects <span>↗</span>
             </a>
 
             <a
               href="#contact"
-              className="rounded-lg border border-[#5C4033] px-6 py-3 font-mono font-medium text-[#5C4033] transition hover:-translate-y-1 hover:bg-[#5C4033] hover:text-white"
+              className="inline-flex items-center gap-3 rounded-full border-2 border-[#25231F] px-7 py-4 font-mono text-sm font-bold transition duration-200 hover:-translate-y-1 hover:bg-[#D7F36A]"
             >
-              Contact Me
+              Get in Touch <span>✳</span>
             </a>
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center">
-          <div className="relative h-72 w-72 md:h-96 md:w-96">
-            <img
-              src={photos[(currentPhoto + 1) % photos.length]}
-              alt=""
-              className="absolute left-3 top-3 h-72 w-72 rounded-2xl border border-[#D8C4AD] object-cover opacity-70 shadow-md md:left-4 md:top-4 md:h-96 md:w-96"
-            />
+        <div className="relative mx-auto w-full max-w-sm md:col-span-4 md:mt-12">
+          <div className="absolute -right-3 -top-4 h-full w-full rotate-6 rounded-[2rem] bg-[#7652D4] sm:-right-5 sm:-top-5" />
 
-            <div
-              onClick={nextPhoto}
-              className="relative cursor-pointer overflow-hidden rounded-2xl border border-[#C5A582] bg-[#E8D8C4] shadow-lg transition-transform duration-300 hover:scale-[1.02]"
-            >
-              <img
-                src={photos[currentPhoto]}
-                alt={`Instant ${currentPhoto + 1}`}
-                className="h-72 w-72 object-cover md:h-96 md:w-96"
-              />
+          <div className="relative rotate-[-3deg] rounded-[2rem] border-2 border-[#25231F] bg-[#D7F36A] p-7 shadow-xl transition duration-300 hover:rotate-0">
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-xs font-bold uppercase tracking-widest">
+                Portfolio / 2026
+              </span>
+              <span className="text-2xl">✳</span>
+            </div>
+
+            <div className="my-10 flex h-48 items-center justify-center rounded-2xl border-2 border-dashed border-[#25231F]/30 bg-[#FFF8EE]/70">
+              <div className="text-center">
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#FFC6A8] text-4xl font-black text-[#25231F]">
+                  H
+                </div>
+                <p className="mt-4 font-mono text-xs font-bold uppercase tracking-widest">
+                  Creative mind in progress
+                </p>
+              </div>
+            </div>
+
+            <h2 className="text-2xl font-black tracking-tight">
+              Learning. Creating. Growing.
+            </h2>
+
+            <p className="mt-3 font-mono text-sm leading-6 text-[#454438]">
+              Building my skills one project at a time.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              <span className="rounded-full bg-[#25231F] px-3 py-2 font-mono text-xs font-bold text-white">
+                Developer
+              </span>
+              <span className="rounded-full border border-[#25231F]/30 px-3 py-2 font-mono text-xs font-bold">
+                Creative
+              </span>
             </div>
           </div>
 
-          <div className="mt-6 flex gap-2">
-            {photos.map((_, index) => (
-              <div
-                key={index}
-                className={`h-2 w-2 rounded-full ${
-                  index === currentPhoto
-                    ? "bg-[#5C4033]"
-                    : "bg-[#D8C4AD]"
-                }`}
-              ></div>
-            ))}
+          <div className="absolute -bottom-7 -left-5 flex h-16 w-16 rotate-12 items-center justify-center rounded-2xl border-2 border-[#25231F] bg-[#FFC6A8] text-3xl shadow-md">
+            ✦
           </div>
-
-          <p className="mt-3 font-mono text-sm text-[#795548]">
-            Julius and friends :D Click photo to see the next instant!
-          </p>
         </div>
+      </div>
+
+      <div className="relative mx-auto mt-24 flex max-w-6xl flex-wrap items-center justify-between gap-4 border-t border-[#25231F]/20 pt-6">
+        <p className="font-mono text-xs font-bold uppercase tracking-widest text-[#5D554C]">
+          Web Development · Programming · Creativity
+        </p>
+
+        <a
+          href="#about"
+          className="font-mono text-xs font-bold uppercase tracking-widest transition hover:text-[#7652D4]"
+        >
+          Discover More ↓
+        </a>
       </div>
     </section>
   );
