@@ -1,18 +1,20 @@
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
+  color: #5C4033;
+  background: #E8D8C4;
   border: 2px solid transparent;
   transition: border-color 0.3s;
   margin-bottom: 24px;
 
   &:hover {
-    border-color: var(--accent-border);
+    border-color: #C5A582;
   }
+
   &:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid #795548;
     outline-offset: 2px;
   }
 }
@@ -63,6 +65,8 @@
   place-content: center;
   place-items: center;
   flex-grow: 1;
+  background: #F5EFE6;
+  color: #3E2B23;
 
   @media (max-width: 1024px) {
     padding: 32px 20px 24px;
@@ -72,12 +76,15 @@
 
 #next-steps {
   display: flex;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid #D8C4AD;
   text-align: left;
+  background: #F5EFE6;
+  color: #5C4033;
 
   & > div {
     flex: 1 1 0;
     padding: 32px;
+
     @media (max-width: 1024px) {
       padding: 24px 20px;
     }
@@ -96,11 +103,11 @@
 }
 
 #docs {
-  border-right: 1px solid var(--border);
+  border-right: 1px solid #D8C4AD;
 
   @media (max-width: 1024px) {
     border-right: none;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid #D8C4AD;
   }
 }
 
@@ -116,20 +123,22 @@
   }
 
   a {
-    color: var(--text-h);
+    color: #5C4033;
     font-size: 16px;
     border-radius: 6px;
-    background: var(--social-bg);
+    background: #E8D8C4;
     display: flex;
     padding: 6px 12px;
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, background-color 0.3s;
 
     &:hover {
-      box-shadow: var(--shadow);
+      box-shadow: 0 4px 10px rgba(92, 64, 51, 0.2);
+      background: #D8C4AD;
     }
+
     .button-icon {
       height: 18px;
       width: 18px;
@@ -155,7 +164,8 @@
 
 #spacer {
   height: 88px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid #D8C4AD;
+
   @media (max-width: 1024px) {
     height: 48px;
   }
@@ -175,10 +185,11 @@
 
   &::before {
     left: 0;
-    border-left-color: var(--border);
+    border-left-color: #C5A582;
   }
+
   &::after {
     right: 0;
-    border-right-color: var(--border);
+    border-right-color: #C5A582;
   }
 }
