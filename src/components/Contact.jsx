@@ -95,7 +95,7 @@ function Contact() {
                     Email
                   </p>
                   <p className="break-words text-white/90">
-                    Add Hannah's email address
+                    balbin.hannahzabeth@gmail.com
                   </p>
                 </div>
 
@@ -104,7 +104,7 @@ function Contact() {
                     GitHub
                   </p>
                   <p className="break-words text-white/90">
-                    Add Hannah's GitHub username
+                    hannahelzbth
                   </p>
                 </div>
               </div>
