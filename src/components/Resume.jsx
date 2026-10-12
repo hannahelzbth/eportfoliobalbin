@@ -1,4 +1,3 @@
-Resume.jsx
 
 function Resume() {
   return (
