@@ -39,12 +39,11 @@ function Home() {
           </p>
 
           <h1 className="mb-5 text-3xl font-mono font-bold text-black md:text-6xl">
-            Hello, I'm Julius A. Pansoy Jr.
+            Hello, This is Hannah Elizabeth Balbin
           </h1>
 
           <p className="mb-6 max-w-xl font-mono text-lg leading-8 text-black leading-relaxed">
-            I’m currently in my third year of college, studying Information Technology,
-            Interested in learning new technologies.
+            I’m currently in my third year of college, studying Information Technology
           </p>
 
           <div className="flex flex-wrap gap-4">
