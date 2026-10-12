@@ -1,61 +1,96 @@
 
-import { useState } from "react";
-
-function ProjectCard({ title, description, image, technologies, link }) {
-  const [showDetails, setShowDetails] = useState(false);
+function ProjectCard({
+  title,
+  description,
+  image,
+  technologies,
+  link,
+}) {
+  const technologyList =
+    technologies && technologies !== "N/A"
+      ? technologies.split(",").map((technology) => technology.trim())
+      : [];
 
   return (
-    <div className="overflow-hidden rounded-xl border border-[#D8C4AD] bg-[#FFFDF9] shadow-md transition hover:-translate-y-1 hover:shadow-lg">
+    <article className="flex h-full flex-col bg-white text-[#25231F]">
+      <div className="relative overflow-hidden bg-[#FFF8EE]">
+        {image ? (
+          <img
+            src={image}
+            alt={`${title} project preview`}
+            className="h-52 w-full object-cover transition duration-500 hover:scale-105"
+            loading="lazy"
+            onError={(event) => {
+              event.currentTarget.style.display = "none";
+            }}
+          />
+        ) : (
+          <div className="flex h-52 items-center justify-center bg-[#D7F36A]">
+            <span className="text-6xl font-black text-[#7652D4]">✳</span>
+          </div>
+        )}
 
-      <div className="h-48 bg-[#E8D8C4]">
-        <img
-          src={image}
-          alt={title}
-          className="h-full w-full object-cover"
-        />
+        <span className="absolute right-4 top-4 rounded-full border border-[#25231F]/10 bg-[#FFF8EE] px-3 py-2 font-mono text-xs font-bold uppercase tracking-widest">
+          {link ? "Live Project" : "Coming Soon"}
+        </span>
       </div>
 
-      <div className="p-6">
-        <h3 className="mb-2 text-xl font-bold text-[#3E2B23]">
+      <div className="flex flex-1 flex-col p-6">
+        <h3 className="text-2xl font-black tracking-tight">
           {title}
+          <span className="text-[#7652D4]">.</span>
         </h3>
 
-        <p className="text-[#795548]">
+        <p className="mt-3 flex-1 font-mono text-sm leading-7 text-[#5D554C]">
           {description}
         </p>
 
-        <button
-          onClick={() => setShowDetails(!showDetails)}
-          className="mt-4 rounded-lg border border-[#5C4033] bg-[#5C4033] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#795548]"
-        >
-          {showDetails ? "Hide Details" : "View More"}
-        </button>
-
-        {showDetails && (
-          <div className="mt-4 border-t border-[#D8C4AD] pt-4">
-            <p className="text-sm font-semibold text-[#3E2B23]">
-              Technologies Used
+        {technologyList.length > 0 && (
+          <div className="mt-5">
+            <p className="mb-3 font-mono text-xs font-bold uppercase tracking-widest text-[#7652D4]">
+              Built with
             </p>
 
-            <p className="mt-1 text-sm text-[#795548]">
-              {technologies}
-            </p>
+            <div className="flex flex-wrap gap-2">
+              {technologyList.map((technology, index) => (
+                <span
+                  key={technology}
+                  className={`rounded-full border border-[#25231F]/10 px-3 py-2 font-mono text-xs font-bold ${
+                    index % 3 === 0
+                      ? "bg-[#D7F36A]"
+                      : index % 3 === 1
+                        ? "bg-[#FFC6A8]"
+                        : "bg-[#FFF8EE]"
+                  }`}
+                >
+                  {technology}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
 
-            {link && (
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block rounded-lg border border-[#5C4033] bg-[#5C4033] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#795548]"
-              >
-                View Project
-              </a>
-            )}
+        {link && (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 flex items-center justify-between rounded-full bg-[#25231F] px-5 py-4 font-mono text-sm font-bold text-white transition duration-200 hover:-translate-y-1 hover:bg-[#7652D4]"
+          >
+            <span>View Project</span>
+            <span aria-hidden="true" className="text-lg">
+              ↗
+            </span>
+          </a>
+        )}
+
+        {!link && (
+          <div className="mt-6 rounded-full border border-dashed border-[#25231F]/30 px-5 py-4 text-center font-mono text-xs font-bold uppercase tracking-widest text-[#5D554C]">
+            More projects on the way 
           </div>
         )}
       </div>
-
-    </div>
+    </article>
   );
 }
 
