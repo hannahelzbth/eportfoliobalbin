@@ -16,7 +16,7 @@ function Home() {
           </h1>
 
           <p className="mb-6 max-w-xl font-mono text-lg leading-relaxed text-[#5C4033]">
-            I’m currently in my third year of college, studying Information Technology.
+            Taking Bachelor of Information Technology in Cavite State University - Tanza
           </p>
 
           <div className="flex flex-wrap gap-4">
